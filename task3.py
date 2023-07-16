@@ -6,3 +6,12 @@
     Сумма рассчитывается как ставка умноженная на процент премии
 """
 
+names = ["Ale", "Bob", "Rob"]
+rates = [1000, 2000, 1500]
+bonuses = ["10.25%", "8.5%", "12.75%"]
+
+if len(names) == len(rates) == len(bonuses):
+    result = {name: rate * float(bonus.strip('%')) / 100 for name, rate, bonus in zip(names, rates, bonuses)}
+    print(result)
+else:
+    print("Длины списков не совпадают.")
